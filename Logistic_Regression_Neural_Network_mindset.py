@@ -633,10 +633,10 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate
     ### START CODE HERE ###
     
     # initialize parameters with zeros (≈ 1 line of code)
-    w, b = initialize_with_zeros(12288)
+    w, b = initialize_with_zeros(X_train.shape[0])
 
     # Gradient descent (≈ 1 line of code)
-    parameters, grads, costs = optimize(w, b, X_train, Y_train, 2000, 0.5, print_cost = False)
+    parameters, grads, costs = optimize(w, b, X_train, Y_train, num_iterations, learning_rate, print_cost = False)
     
     # Retrieve parameters w and b from dictionary "parameters"
     w = parameters["w"]
